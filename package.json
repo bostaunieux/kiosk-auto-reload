@@ -1,0 +1,41 @@
+{
+  "name": "kiosk-auto-reload",
+  "version": "0.1.0",
+  "description": "Automatically reload Home Assistant dashboard on configuration change",
+  "main": "dist/kiosk-auto-reload.js",
+  "author": "Damien Angelos",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bostaunieux/kiosk-auto-reload"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "start": "rollup -c --watch",
+    "build": "rollup -c",
+    "format": "prettier --print-width 100 --write ."
+  },
+  "dependencies": {
+    "home-assistant-js-websocket": "^9.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-eslint": "^9.0.5",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-wc": "^2.1.0",
+    "prettier": "^3.2.5",
+    "rollup": "^4.16.1",
+    "rollup-plugin-serve": "^2.0.3",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0"
+  }
+}
