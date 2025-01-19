@@ -1,6 +1,5 @@
 import type { Connection } from "home-assistant-js-websocket";
 
-
 export {};
 
 declare global {
@@ -11,25 +10,23 @@ declare global {
   }
 }
 
-type HassEvent = LovelaceUpdatedEvent | BrowserReloadEvent
+type HassEvent = LovelaceUpdatedEvent | BrowserReloadEvent;
 
 type LovelaceUpdatedEvent = {
-  event_type: 'lovelace_updated';
+  event_type: "lovelace_updated";
   data: {
     url_path: string;
   };
-}  
+};
 
 type BrowserReloadEvent = {
-  event_type: 'browser_reload_requested';
+  event_type: "browser_reload_requested";
   data: {
     browser_id: string;
   };
-}  
-
+};
 
 const kioskAutoReload = () => {
-  
   if (!window.hassConnection) {
     console.debug("hassConnection not defined; will retry in 2 seconds");
     setTimeout(kioskAutoReload, 2000);
@@ -50,7 +47,7 @@ const kioskAutoReload = () => {
 
 const handleLovelaceUpdated = (ev: LovelaceUpdatedEvent) => {
   // skip reload if kiosk mode is not set in query string
-  if (new URLSearchParams(window.location.search).get("kiosk") == null) {
+  if (new URLSearchParams(window.location.search).get("auto_reload") == null) {
     return;
   }
   // skip reload if the update event does not match the current dashboard
