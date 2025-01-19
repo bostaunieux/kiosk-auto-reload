@@ -37,14 +37,16 @@ To enable, load a dashboard with the `browser_id` query string parameter (with o
 1. Create a custom [Input Button](https://www.home-assistant.io/integrations/input_button/), such as `input_button.reload_kitchen_dashboard`
 2. Create an automation to watch for the button trigger and fire the browser reload event
    ```
-   alias: "Button: Reload Kitchen Dashboard"
-   mode: single
-   triggers:
-     - entity_id:
-       - input_button.reload_kitchen_dashboard
-     trigger: state
-   actions:
+   alias: "Button: Reload Dashboard"
+   description: ""
+   trigger:
+     - platform: state
+       entity_id:
+         - input_button.reload_kitchen_dashboard
+   condition: []
+   action:
      - event: browser_reload_requested
        event_data:
          browser_id: kitchen
+   mode: single
    ```
