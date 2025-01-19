@@ -1,7 +1,4 @@
-import commonjs from "@rollup/plugin-commonjs";
 import eslint from "@rollup/plugin-eslint";
-import json from "@rollup/plugin-json";
-import nodeResolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import serve from "rollup-plugin-serve";
@@ -19,9 +16,6 @@ const serveOptions = {
 };
 
 const plugins = [
-  nodeResolve(),
-  json(),
-  commonjs(),
   eslint(),
   typescript(),
   ...(dev ? [serve(serveOptions)] : [terser()]),
@@ -31,7 +25,7 @@ export default [
   {
     input: "src/kiosk-auto-reload.ts",
     output: {
-      file: "dist/kiosk-auto-reload.js",
+      file: `dist/kiosk-auto-reload.${dev ? 'dev.' : ''}js`,
       format: "es",
       inlineDynamicImports: true,
     },
