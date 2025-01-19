@@ -15,17 +15,13 @@ const serveOptions = {
   },
 };
 
-const plugins = [
-  eslint(),
-  typescript(),
-  ...(dev ? [serve(serveOptions)] : [terser()]),
-];
+const plugins = [eslint(), typescript(), ...(dev ? [serve(serveOptions)] : [terser()])];
 
 export default [
   {
     input: "src/kiosk-auto-reload.ts",
     output: {
-      file: `dist/kiosk-auto-reload.${dev ? 'dev.' : ''}js`,
+      file: `dist/kiosk-auto-reload.${dev ? "dev." : ""}js`,
       format: "es",
       inlineDynamicImports: true,
     },
