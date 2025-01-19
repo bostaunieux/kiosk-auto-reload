@@ -42,6 +42,8 @@ To verify this works:
 
 For cases where you want to programatically trigger a reload without requiring a config change, you can fire a custom event.
 
+![Manual Reload Preview](https://github.com/user-attachments/assets/c640960a-a84b-4de9-a2da-d4c7696f57a1)
+
 To enable, load a dashboard with the `browser_id` query string parameter (with or without the `auto_reload` option) and give it a unique name, such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&browser_id=kitchen
 
 To verify this works:
@@ -53,7 +55,7 @@ To verify this works:
 2. Select `Fire Event`
 
 Example
-![Manual Reload Preview](https://github.com/user-attachments/assets/c640960a-a84b-4de9-a2da-d4c7696f57a1)
+![Event Preview](https://github.com/user-attachments/assets/5377371f-9fcb-43a4-b0e1-b9ce03683af7)
 
 ### To trigger via a dashboard button
 
