@@ -2,6 +2,8 @@
 
 Automatically reload Home Assistant dashboards on configuration change
 
+![Preview](https://github.com/user-attachments/assets/dcb98e26-0454-4eae-b2c6-50c2fe4d9bf8)
+
 ## How It Works
 
 Home Assistant fires an event whenever a configuration change is saved. This script subscribes to these events, filters to those that apply to the currently-loaded dashboard and then additionally only triggers for browser instances configured to auto-reload via a query string parameter.
