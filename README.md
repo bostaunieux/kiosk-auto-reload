@@ -17,6 +17,9 @@ Home Assistant fires an event whenever a configuration change is saved. This scr
 
 For cases where you want to programatically trigger a reload without requiring a config change, you can fire a custom event.
 
+![Preview](https://github.com/user-attachments/assets/bd6b17d9-8d14-4b6a-996f-95d4bfd660f6)
+
+
 To enable, load a dashboard with the `browser_id` query string parameter (with or without `auto_reload`), such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&browser_id=kitchen
 
 ### Debug setup
