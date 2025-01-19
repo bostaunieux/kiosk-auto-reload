@@ -8,7 +8,7 @@ Home Assistant fires an event whenever a configuration change is saved. This scr
 
 1. Add the plugin to Home Assistant
 2. Load a dashboard with the `auto_reload` query string parameter, such as http://homeassistant.local:8123/dashboard-main?auto_reload=true
-3. In a separate broweser window (on the same device or a different one), load the same dashboard without the query string parameter, e.g. http://homeassistant.local:8123/dashboard-main, then modify and save the configuration
+3. In a separate browser window (on the same device or a different one), load the same dashboard without the query string parameter, e.g. http://homeassistant.local:8123/dashboard-main, then modify and save the configuration
 4. The initial dashboard with automaticaly reload
 
 
@@ -16,14 +16,14 @@ Home Assistant fires an event whenever a configuration change is saved. This scr
 
 For cases where you want to programatically trigger a reload without requiring a config change, you can fire a custom event.
 
-To enable, load a dashboard with the `browser_id` query string parameter (with or without `auto_reload`), such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&browser_id=my_unique_browser_id
+To enable, load a dashboard with the `browser_id` query string parameter (with or without `auto_reload`), such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&browser_id=kitchen
 
 ### Debug setup
 
 1. In the Event tab of Developer Tools, enter `browser_reload_requested` for the Event type with Event data set to:
 
    ```
-   browser_id: my_unique_browser_id
+   browser_id: kitchen
    ```
 
 2. Select `Fire Event`
