@@ -1,6 +1,6 @@
 {
   "name": "kiosk-auto-reload",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Automatically reload Home Assistant dashboard on configuration change",
   "main": "dist/kiosk-auto-reload.js",
   "author": "Damien Angelos",
