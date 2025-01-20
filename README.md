@@ -29,16 +29,15 @@ This plugin is available in HACS (Home Assistant Community Store)
 3. Add the script as a resource in your Home Assistant instance
    1. From the UI, navigate to Settings > Dashboards > More Options (top right icon) > Resources > Add Resource
    2. Add the resource:
-      * Url: `/local/kiosk-auto-reload.js`
-      * Resource type: JavaScript Module
-   * Note: If the Resources menu is not available, verify you have enabled Advanced Mode in your User Profile
-
+      - Url: `/local/kiosk-auto-reload.js`
+      - Resource type: JavaScript Module
+   - Note: If the Resources menu is not available, verify you have enabled Advanced Mode in your User Profile
 
 ## How To Use
 
 ### Auto reload a dashboard
 
-Any dashboard with the `auto_reload=true` query string parameter will listen for configuration changes and reload after 5 seconds.
+Any dashboard with the `auto_reload` query string parameter will listen for configuration changes and reload after 5 seconds.
 
 To verify this works:
 
@@ -47,6 +46,11 @@ To verify this works:
    - Window B: http://homeassistant.local:8123/dashboard-main?auto_reload=true
 2. In Window A, make a change to the dashboard, such as adding, deleting or modifying a card
 3. Observe Window B will automatically reload when the change is made
+
+Two options exist for configuring the browser reload behavior:
+
+1. Reload with a 5 second delay - use `auto_reload=true`
+2. Reload immediately - use `auto_reload=immediate`
 
 > IMPORTANT: Do not try to edit a dashboard in a browser window with the `auto_reload` query string parameter. Doing so will trigger the window to reload on every edit.
 

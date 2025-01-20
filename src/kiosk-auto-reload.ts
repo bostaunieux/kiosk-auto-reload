@@ -46,12 +46,19 @@ const kioskAutoReload = () => {
 };
 
 const handleLovelaceUpdated = (ev: LovelaceUpdatedEvent) => {
-  // skip reload if kiosk mode is not set in query string
-  if (new URLSearchParams(window.location.search).get("auto_reload") == null) {
+  // skip reload if reload param is not set in query string
+  const reloadParam = new URLSearchParams(window.location.search).get("auto_reload");
+  if (reloadParam == null) {
     return;
   }
   // skip reload if the update event does not match the current dashboard
   if (!window.location.pathname.startsWith(`/${ev.data.url_path}`)) {
+    return;
+  }
+
+  // reload immediately if the "immediate" flag is present
+  if (reloadParam === "immediate") {
+    window.location.reload();
     return;
   }
 
