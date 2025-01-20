@@ -12,15 +12,27 @@ Home Assistant fires an event whenever a dashboard configuration is changed. Thi
 
 ### HACS
 
-This plugin is available in HACS (Home Assistant Community Store).
+This plugin is available in HACS (Home Assistant Community Store)
 
 1. Open HACS within your Home Assistant instance
-2. Select the top right menu and open "Custom repositories"
+2. Select the More Options menu (top right icon) and open "Custom repositories"
 3. Add this repository:
    - Repository: https://github.com/bostaunieux/kiosk-auto-reload
    - Type: Dashboard
 4. Close the dialog and search for "Kiosk auto-reload"
 5. Click the Download button
+
+### Manual
+
+1. Download the `kiosk-auto-reload.js` file from the [latest release](https://github.com/bostaunieux/kiosk-auto-reload/releases)
+2. Copy the `kiosk-auto-reload.js` file into your config/www folder
+3. Add the script as a resource in your Home Assistant instance
+   1. From the UI, navigate to Settings > Dashboards > More Options (top right icon) > Resources > Add Resource
+   2. Add the resource:
+      * Url: `/local/kiosk-auto-reload.js`
+      * Resource type: JavaScript Module
+   * Note: If the Resources menu is not available, verify you have enabled Advanced Mode in your User Profile
+
 
 ## How To Use
 
@@ -55,7 +67,8 @@ To verify this works:
 2. Select `Fire Event`
 
 Example
-![Event Preview](https://github.com/user-attachments/assets/5377371f-9fcb-43a4-b0e1-b9ce03683af7)
+
+<img src="https://github.com/user-attachments/assets/5377371f-9fcb-43a4-b0e1-b9ce03683af7" width="400px" />
 
 ### To trigger via a dashboard button
 
