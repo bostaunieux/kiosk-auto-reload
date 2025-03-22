@@ -1,6 +1,7 @@
 import eslint from "@rollup/plugin-eslint";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
+import json from "@rollup/plugin-json";
 import serve from "rollup-plugin-serve";
 
 const dev = process.env.ROLLUP_WATCH;
@@ -15,7 +16,7 @@ const serveOptions = {
   },
 };
 
-const plugins = [eslint(), typescript(), ...(dev ? [serve(serveOptions)] : [terser()])];
+const plugins = [eslint(), typescript(), json(), ...(dev ? [serve(serveOptions)] : [terser()])];
 
 export default [
   {
