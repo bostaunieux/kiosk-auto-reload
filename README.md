@@ -4,9 +4,12 @@ Utilities to support running Home Assistant dashboards as a kiosk, including aut
 
 ## Installation
 
-### HACS
+This plugin is available to install via HACS (Home Assistant Community Store) or manually as a custom resource
 
-This plugin is available to install via HACS (Home Assistant Community Store)
+<details>
+  <summary>
+    <h3>HACS Installation</h3>
+  </summary>
 
 1. Open HACS within your Home Assistant instance
 2. Select the More Options menu (top right icon) and open "Custom repositories"
@@ -16,8 +19,13 @@ This plugin is available to install via HACS (Home Assistant Community Store)
 4. Close the dialog and search for "Kiosk Auto Reload"
 5. Click the Download button
 
-### Manual
+</details>
 
+<details>
+  <summary>
+    <h3>Manual Installation</h3>
+  </summary>
+   
 1. Download the `kiosk-auto-reload.js` file from the [latest release](https://github.com/bostaunieux/kiosk-auto-reload/releases)
 2. Copy the `kiosk-auto-reload.js` file into your config/www folder
 3. Add the script as a resource in your Home Assistant instance
@@ -26,7 +34,7 @@ This plugin is available to install via HACS (Home Assistant Community Store)
       - Url: `/local/kiosk-auto-reload.js`
       - Resource type: JavaScript Module
    - Note: If the Resources menu is not available, verify you have enabled Advanced Mode in your User Profile
-
+</details>
 
 ## Auto-reload
 
@@ -42,7 +50,7 @@ Any dashboard with the `auto_reload` query string parameter will listen for conf
 
 To verify this works:
 
-1. Open the same dashboard in two browser windows side by side - one with the auto reload option and one without. Example:
+1. Open the same dashboard in two browser windows side by side – one with the auto reload option and one without. Example:
    - Window A: http://homeassistant.local:8123/dashboard-main
    - Window B: http://homeassistant.local:8123/dashboard-main?auto_reload=true
 2. In Window A, make a change to the dashboard, such as adding, deleting or modifying a card
