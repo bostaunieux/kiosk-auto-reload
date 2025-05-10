@@ -3,12 +3,12 @@ const waitForElement = (selector: string, parent?: ParentNode): Promise<HTMLElem
 
   return new Promise((resolve) => {
     const element = root.querySelector<HTMLElement>(selector);
-    if (element) {
+    if (element?.shadowRoot != null) {
       return resolve(element);
     }
 
     const observer = new MutationObserver(() => {
-      if (root.querySelector(selector)) {
+      if (root.querySelector(selector)?.shadowRoot != null) {
         observer.disconnect();
         resolve(root.querySelector<HTMLElement>(selector));
       }
