@@ -30,11 +30,11 @@
     "@rollup/plugin-typescript": "^12.1.2",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-wc": "^2.1.0",
+    "eslint-plugin-wc": "^3.0.1",
     "home-assistant-js-websocket": "^9.4.0",
     "prettier": "^3.4.2",
     "rollup": "^4.31.0",
-    "rollup-plugin-serve": "^2.0.3",
+    "rollup-plugin-serve": "^3.0.0",
     "tslib": "^2.6.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0"
