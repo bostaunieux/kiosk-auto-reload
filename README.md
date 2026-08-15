@@ -25,7 +25,7 @@ This plugin is available to install via HACS (Home Assistant Community Store) or
   <summary>
     <h3>Manual Installation</h3>
   </summary>
-   
+
 1. Download the `kiosk-auto-reload.js` file from the [latest release](https://github.com/bostaunieux/kiosk-auto-reload/releases)
 2. Copy the `kiosk-auto-reload.js` file into your config/www folder
 3. Add the script as a resource in your Home Assistant instance
@@ -34,6 +34,7 @@ This plugin is available to install via HACS (Home Assistant Community Store) or
       - Url: `/local/kiosk-auto-reload.js`
       - Resource type: JavaScript Module
    - Note: If the Resources menu is not available, verify you have enabled Advanced Mode in your User Profile
+
 </details>
 
 ## Auto-reload

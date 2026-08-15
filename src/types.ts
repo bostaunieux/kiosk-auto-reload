@@ -9,9 +9,7 @@ declare global {
 }
 
 export type HassEvent =
-  | LovelaceUpdatedEvent
-  | BrowserReloadEvent
-  | ComponentVisibilityChangeRequestedEvent;
+  LovelaceUpdatedEvent | BrowserReloadEvent | ComponentVisibilityChangeRequestedEvent;
 
 export type LovelaceUpdatedEvent = {
   event_type: "lovelace_updated";
