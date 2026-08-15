@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=20.19.0"
+    "node": ">=26.0.0"
   },
   "scripts": {
     "start": "rollup -c --watch",
