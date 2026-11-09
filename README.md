@@ -39,7 +39,7 @@ This plugin is available to install via HACS (Home Assistant Community Store) or
 
 ## Auto-reload
 
-![Auto-reload Preview](https://github.com/user-attachments/assets/d5690f1d-a91e-4db0-8f0f-1a34a9435420)
+![Auto-reload Preview](https://github.com/user-attachments/assets/61c6a57d-eab1-4d6c-98d5-6340009a7647)
 
 ### How It Works
 
@@ -70,7 +70,7 @@ Two options exist for configuring the browser reload behavior:
 
 For cases where you want to programatically trigger a reload without requiring a config change, you can fire a custom event.
 
-![Manual Reload Preview](https://github.com/user-attachments/assets/c640960a-a84b-4de9-a2da-d4c7696f57a1)
+![Manual Reload Preview](https://github.com/user-attachments/assets/f8dabbc3-409e-4e42-9b45-a3cd681e4ae9)
 
 To enable, load a dashboard with the `browser_id` query string parameter (with or without the `auto_reload` option) and give it a unique name, such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&browser_id=kitchen
 
@@ -121,7 +121,7 @@ For a very simple kiosk mode setup that hides the sidebar and header, add the `a
 
 In cases where you want to programatically toggle the header and sidebar visibility, fire the custom `component_visibility_change_requested` event and target a specific dashboard instance via the `browser_id` query string parameter.
 
-https://github.com/user-attachments/assets/a89afe7c-0b32-4185-a7e6-071a1d2333b8
+![Toggle Navigation Preview](https://github.com/user-attachments/assets/051806f9-4b33-4fd5-8a2f-0c4e90219f06)
 
 To enable, load a dashboard with the `browser_id` query string parameter (with or without the `auto_hide_nav` option) and give it a unique name, such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&auto_hide_nav=true&browser_id=kitchen
 
