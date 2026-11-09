@@ -8,6 +8,15 @@ declare global {
   }
 }
 
+/** The `<home-assistant>` root element, which exposes the frontend's hass object. */
+export type HomeAssistantElement = HTMLElement & {
+  hass?: {
+    config?: {
+      version?: string;
+    };
+  };
+};
+
 export type HassEvent =
   LovelaceUpdatedEvent | BrowserReloadEvent | ComponentVisibilityChangeRequestedEvent;
 
