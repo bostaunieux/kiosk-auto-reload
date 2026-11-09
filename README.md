@@ -121,7 +121,7 @@ For a very simple kiosk mode setup that hides the sidebar and header, add the `a
 
 In cases where you want to programatically toggle the header and sidebar visibility, fire the custom `component_visibility_change_requested` event and target a specific dashboard instance via the `browser_id` query string parameter.
 
-https://github.com/user-attachments/assets/a89afe7c-0b32-4185-a7e6-071a1d2333b8
+![Toggle Navigation Preview](https://github.com/user-attachments/assets/051806f9-4b33-4fd5-8a2f-0c4e90219f06)
 
 To enable, load a dashboard with the `browser_id` query string parameter (with or without the `auto_hide_nav` option) and give it a unique name, such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&auto_hide_nav=true&browser_id=kitchen
 
