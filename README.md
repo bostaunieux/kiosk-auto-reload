@@ -4,12 +4,26 @@ Utilities to support running Home Assistant dashboards as a kiosk, including aut
 
 ## Installation
 
-This plugin is available to install via HACS (Home Assistant Community Store) or manually as a custom resource
+This plugin is available to install via the Home Assistant Marketplace (Home Assistant 2026.11+), HACS (Home Assistant 2026.10 and older), or manually as a custom resource
 
 <details>
   <summary>
-    <h3>HACS Installation</h3>
+    <h3>Marketplace Installation (Home Assistant 2026.11+)</h3>
   </summary>
+
+1. Open Settings > Marketplace within your Home Assistant instance
+2. Select "Add from link", enter this repository URL and select "Add":
+   - https://github.com/bostaunieux/kiosk-auto-reload
+3. Follow the steps to connect GitHub and finish importing the repository, then install "Kiosk Auto Reload"
+
+</details>
+
+<details>
+  <summary>
+    <h3>HACS Installation (Home Assistant 2026.10 and older)</h3>
+  </summary>
+
+> **Migrating to the Marketplace:** Home Assistant 2026.11 replaced HACS with the built-in Marketplace, and HACS can no longer be installed on 2026.11 or newer. If you installed this plugin through HACS, no action is needed: on upgrade, the Marketplace takes over your HACS downloads and custom repositories, and this plugin stays installed and continues to receive updates.
 
 1. Open HACS within your Home Assistant instance
 2. Select the More Options menu (top right icon) and open "Custom repositories"
@@ -33,13 +47,12 @@ This plugin is available to install via HACS (Home Assistant Community Store) or
    2. Add the resource:
       - Url: `/local/kiosk-auto-reload.js`
       - Resource type: JavaScript Module
-   - Note: If the Resources menu is not available, verify you have enabled Advanced Mode in your User Profile
 
 </details>
 
 ## Auto-reload
 
-![Auto-reload Preview](https://github.com/user-attachments/assets/61c6a57d-eab1-4d6c-98d5-6340009a7647)
+![Auto-reload Preview](https://raw.githubusercontent.com/bostaunieux/kiosk-auto-reload/main/docs/images/auto-reload.webp)
 
 ### How It Works
 
@@ -70,7 +83,7 @@ Two options exist for configuring the browser reload behavior:
 
 For cases where you want to programatically trigger a reload without requiring a config change, you can fire a custom event.
 
-![Manual Reload Preview](https://github.com/user-attachments/assets/f8dabbc3-409e-4e42-9b45-a3cd681e4ae9)
+![Manual Reload Preview](https://raw.githubusercontent.com/bostaunieux/kiosk-auto-reload/main/docs/images/manual-reload.webp)
 
 To enable, load a dashboard with the `browser_id` query string parameter (with or without the `auto_reload` option) and give it a unique name, such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&browser_id=kitchen
 
@@ -84,11 +97,11 @@ event_data:
 
 To verify this works:
 
-1. In the Developer Tools > Events page, enter `browser_reload_requested` for the Event type with Event data set to:
+1. Go to Settings > Tools > Events, enter `browser_reload_requested` for the Event type, and set Event data to:
    ```
    browser_id: <my-unique-browser-id>
    ```
-2. Select `Fire Event`
+2. Select `Fire event`
 
 Example
 
@@ -101,12 +114,12 @@ To trigger a reload via a dashboard button
    ```
    alias: "Button: Reload Dashboard"
    description: ""
-   trigger:
-     - platform: state
+   triggers:
+     - trigger: state
        entity_id:
          - input_button.reload_kitchen_dashboard
-   condition: []
-   action:
+   conditions: []
+   actions:
      - event: browser_reload_requested
        event_data:
          browser_id: kitchen
@@ -121,7 +134,7 @@ For a very simple kiosk mode setup that hides the sidebar and header, add the `a
 
 In cases where you want to programatically toggle the header and sidebar visibility, fire the custom `component_visibility_change_requested` event and target a specific dashboard instance via the `browser_id` query string parameter.
 
-![Toggle Navigation Preview](https://github.com/user-attachments/assets/051806f9-4b33-4fd5-8a2f-0c4e90219f06)
+![Toggle Navigation Preview](https://raw.githubusercontent.com/bostaunieux/kiosk-auto-reload/main/docs/images/toggle-navigation.webp)
 
 To enable, load a dashboard with the `browser_id` query string parameter (with or without the `auto_hide_nav` option) and give it a unique name, such as http://homeassistant.local:8123/dashboard-main?auto_reload=true&auto_hide_nav=true&browser_id=kitchen
 
@@ -133,3 +146,12 @@ event_data:
   browser_id: <my-unique-browser-id>
   visible: true
 ```
+
+To verify this works:
+
+1. Go to Settings > Tools > Events, enter `component_visibility_change_requested` for the Event type, and set Event data to:
+   ```
+   browser_id: <my-unique-browser-id>
+   visible: false
+   ```
+2. Select `Fire event` and observe the header and sidebar are hidden. Fire it again with `visible: true` to show them.
