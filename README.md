@@ -4,34 +4,42 @@ Utilities to support running Home Assistant dashboards as a kiosk, including aut
 
 ## Installation
 
-This plugin is available to install via the Home Assistant Marketplace (Home Assistant 2026.11+), HACS (Home Assistant 2026.10 and older), or manually as a custom resource
+Kiosk Auto Reload is listed in the Home Assistant Marketplace (Home Assistant 2026.11+) and in the HACS default catalog (Home Assistant 2026.10 and older). You can also install it manually as a custom resource.
 
-<details>
-  <summary>
-    <h3>Marketplace Installation (Home Assistant 2026.11+)</h3>
-  </summary>
+### Marketplace (Home Assistant 2026.11+)
 
 1. Open Settings > Marketplace within your Home Assistant instance
-2. Select "Add from link", enter this repository URL and select "Add":
+2. Search for "Kiosk Auto Reload"
+3. Open it and select Install
+
+<details>
+  <summary>Not finding it? Add it from a link instead</summary>
+
+1. Open Settings > Marketplace and select "Add from link"
+2. Enter this repository URL and select "Add":
    - https://github.com/bostaunieux/kiosk-auto-reload
-3. Follow the steps to connect GitHub and finish importing the repository, then install "Kiosk Auto Reload"
+3. Follow the steps to connect GitHub and finish importing the repository, then open "Kiosk Auto Reload" and select Install
 
 </details>
 
 <details>
   <summary>
-    <h3>HACS Installation (Home Assistant 2026.10 and older)</h3>
+    <h3>HACS (Home Assistant 2026.10 and older)</h3>
   </summary>
 
 > **Migrating to the Marketplace:** Home Assistant 2026.11 replaced HACS with the built-in Marketplace, and HACS can no longer be installed on 2026.11 or newer. If you installed this plugin through HACS, no action is needed: on upgrade, the Marketplace takes over your HACS downloads and custom repositories, and this plugin stays installed and continues to receive updates.
 
 1. Open HACS within your Home Assistant instance
-2. Select the More Options menu (top right icon) and open "Custom repositories"
-3. Add this repository:
+2. Search for "Kiosk Auto Reload"
+3. Click the Download button
+
+**Not finding it?** Add it as a custom repository:
+
+1. In HACS, select the More Options menu (top right icon) and open "Custom repositories"
+2. Add this repository:
    - Repository: https://github.com/bostaunieux/kiosk-auto-reload
    - Type: Dashboard
-4. Close the dialog and search for "Kiosk Auto Reload"
-5. Click the Download button
+3. Close the dialog, search for "Kiosk Auto Reload" and click Download
 
 </details>
 
